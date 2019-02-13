@@ -30,7 +30,7 @@ This should not violate the exercise purpose but if anyone disagree can contact 
     2. "request"
 
    - Used to parse useragents:
-    1. "useragent"
+     1. "useragent"
 
 ## USER STORIES
 
@@ -61,8 +61,6 @@ and system infos (from header User-Agent) for my device.
 ### FILE METADATA MICROSERVICE
 
 *User Story*: I can submit a form object that includes a file upload.
-
-*User Story*: The from file input field has the "name" attribute set to "upfile". We rely on this in testing.
 
 *User Story*: When I submit something, I will receive the file name, and size in bytes within the JSON response.
 
