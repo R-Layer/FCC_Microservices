@@ -1,0 +1,84 @@
+include ./mixins
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Microservices - 5in1
+        link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
+        link(rel="stylesheet" href="/css/main.css")
+        script(type="module" src="/main.mjs")
+    body
+        main.grid-layout
+            article.grid-layout__slot1.frame
+                .article-header
+                    h4 Header Parser 
+                    +infoPopup(servicesInfo.headerParser)
+                if headerParser
+                    p.info-board
+                        each val, key in headerParser
+                            span
+                                label(for=key) #{key}:
+                                |
+                                |
+                                span(id=key) #{val}
+                else
+                    span Can't parse your request headers, something went wrong
+            article.grid-layout__slot2.frame
+                .article-header
+                    h4.title File Metadata
+                    +infoPopup(servicesInfo.localMetadata)
+                form#form-upload.form-container
+                    .wrapper
+                        .file-upload 
+                            span &#8613;
+                            input(type="file" name="upload")#upload.full-width
+                        input(type="text" name="upload-name" readonly)#upload-name
+                    input(type="submit" value="Collect metadata!").full-width.button
+                ul#metadata-list.compact-list
+                    if metadata
+                        +listFromObj(metadata)
+                    else 
+                        span Upload a file
+            article.grid-layout__slot3.frame
+                .article-header
+                    h4.title URL Shortener
+                    +infoPopup(servicesInfo.shortener_url)
+                form#form-shortener.form-container
+                    input(type="text" name="short-val")#short-val.full-width
+                    input(type="submit" value="Short it!").full-width.button
+                ul#shortener-list.compact-list
+                    if shortener
+                        each val, key in shortener
+                            if key.match(/error/)
+                                li.error
+                                    label(for=key) #{key}:
+                                    span(id=key) #{val}
+                            else
+                                li
+                                    label(for=key) #{key}:
+                                    a(id=key href=shortener_addr) #{val}
+                    else 
+                        span Post an address!
+            article.grid-layout__slot4.frame
+                .article-header
+                    h4.title Timestamp
+                    +infoPopup(servicesInfo.timestamp)
+                ul#date-list.compact-list
+                    if timestamp
+                        +listFromObj(timestamp)
+                    else 
+                        span Test the service!
+            article.grid-layout__slot5.frame
+                .article-header
+                    h4.title Image search
+                    +infoPopup(servicesInfo.imageSearch)
+                ol#image-list.extended-list
+                    if images
+                        each image in images
+                            li #{image.name}
+                                ul.inner-list
+                                    +listFromObj(image)
+                    else
+                        span Search for some images!

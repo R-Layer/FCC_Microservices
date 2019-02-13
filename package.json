@@ -1,0 +1,24 @@
+{
+  "name": "fcc_microservices",
+  "version": "1.0.0",
+  "description": "FCC project - All the microservices projects packed into one!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Layer",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
+    "memorystore": "^1.6.0",
+    "moment": "^2.24.0",
+    "pug": "^2.0.3",
+    "qwant-api": "^0.5.0",
+    "request": "^2.88.0",
+    "useragent": "^2.3.0",
+    "uuid": "^3.3.2"
+  }
+}

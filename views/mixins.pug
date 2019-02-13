@@ -1,0 +1,18 @@
+mixin listFromObj(obj)
+    each val, key in obj
+        if key.match(/error/)
+            li.error
+                label(for=key) #{key}:
+                span(id=key) #{val}
+        else
+            li
+                label(for=key) #{key}:
+                if key.match(/_url$/)
+                    a(id=key href=(val.toString().match(/^http/)? val : "http://" + val)) #{val}
+                else
+                    span(id=key) #{val}
+
+mixin infoPopup(info)
+    div(aria-haspopup="true").popup  &#8505;
+        p #{info}
+        div
