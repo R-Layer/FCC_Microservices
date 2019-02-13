@@ -2,8 +2,8 @@
 Clone the project --> rename the `.env.sample` file to `.env` --> run `npm start`
 
 #### Genesis:
-This projects derive from a cleanup i made to my account: it package all the 5 microservices of **FCC backend legacy certification** into one single app.
-This is possible because the legacy certification does not implement an automated test and this allows to 'loosely interpret' the user stories on what the users receives back from their requests. To be more specific **the api returns a JSON** instruction is not satisfied: the data object (obtained and formatted as the instructions states) instead of being passed back to the client as a JSON object is stored into the session and displayed inside a pug template.
+This projects derive from a cleanup i made to my account: it package all the 5 microservices of *FCC backend legacy certification* into one single app.
+This is possible because the legacy certification does not implement an automated test and this allows to 'loosely interpret' the user stories on what the users receives back from their requests. To be more specific *the api returns a JSON* instruction is not satisfied: the data object (obtained and formatted as the instructions states) instead of being passed back to the client as a JSON object is stored into the session and displayed inside a pug template.
 This should not violate the exercise purpose but if anyone disagree can contact me to my profile on FCC forum  (Layer)
 
 #### Packages:
